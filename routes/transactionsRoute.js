@@ -46,7 +46,7 @@ router.post("/get-all-transactions", async (req, res) => {
   const { frequency, selectedRange, type } = req.body;
   try {
     const transactions = await Transaction.find({
-      ...(frequency !== "çustom"
+      ...(frequency !== "custom"
         ? {
             date: {
               $gt: moment().subtract(Number(req.body.frequency), "d").toDate(),
