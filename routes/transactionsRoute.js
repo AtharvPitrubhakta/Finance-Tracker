@@ -17,7 +17,7 @@ router.post("/add-transaction", async function (req, res) {
 router.post("/edit-transaction", async function (req, res) {
   try {
 
-    await Transaction.findOneAndUpdate({_id: req.body.transactionId}, req.body.payload)
+    await Transaction.findOneAndUpdate({_id: req.body.transactionId}, {$set:req.body.payload}, {new:true})
 
     res.send("Transaction Updated Successfully");
 
