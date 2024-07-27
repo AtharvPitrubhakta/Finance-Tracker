@@ -13,13 +13,13 @@ app.use("/api/transactions/", transactionsRoute);
 
 const PORT = process.env.PORT || 4000;
 
-if(process.env.NODE_ENV === 'production') 
-{
-    app.use('/', express.static('build'))
+// if(process.env.NODE_ENV === 'production') 
+// {
+//     app.use('/', express.static('build'))
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'build/index.html'));
-    }) 
-}
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'build/index.html'));
+//     }) 
+// }
 
 app.listen(PORT, () => console.log(`Node JS Server Started at port ${PORT}!`))
