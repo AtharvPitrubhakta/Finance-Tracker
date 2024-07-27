@@ -9,7 +9,7 @@ const transactionsRoute = require('./routes/transactionsRoute');
 app.use("/api/users/", userRoute);
 app.use("/api/transactions/", transactionsRoute);
 
-const port = process.env.PORT || 5000
+const PORT = process.env.PORT || 4000;
 
 if(process.env.NODE_ENV === 'production') 
 {
@@ -20,4 +20,4 @@ if(process.env.NODE_ENV === 'production')
     }) 
 }
 
-app.listen(port, () => console.log(`Node JS Server Started at port ${port}!`))
+app.listen(PORT, () => console.log(`Node JS Server Started at port ${PORT}!`))
